@@ -66,7 +66,12 @@ class TestOffsetPaginationHook(TestCase):
         hook = OffsetPaginationHook(offset_key='new_offset')
         hook(self._request, self._response, self._resource, self._params)
 
-        self.assertEqual(self._request.context['pagination']['offset'], 30)
+    def test_request_with_invalid_offset(self):
+        self._request.params['offset'] = 'error'
+        hook = OffsetPaginationHook()
+        hook(self._request, self._response, self._resource, self._params)
+
+        self.assertEqual(self._request.context['pagination']['offset'], 0)
 
     def test_request_with_other_limit_key(self):
         self._request.params['new_limit'] = 30
@@ -90,7 +95,7 @@ class TestOffsetPaginationHook(TestCase):
 
     def test_request_with_invalid_limit(self):
         self._request.params['limit'] = 'error'
-        hook = OffsetPaginationHook(max_limit=1000)
+        hook = OffsetPaginationHook()
         hook(self._request, self._response, self._resource, self._params)
 
         self.assertEqual(self._request.context['pagination']['limit'], hook._default_limit)
