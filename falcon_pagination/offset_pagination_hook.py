@@ -39,7 +39,7 @@ class OffsetPaginationHook(object):
         :param resource: Reference to the resource class instance associated with the request
         :param params: dict of URI Template field names
         """
-        request.context["pagination"] = dict()
+        request.context.setdefault("pagination", dict())
         self._set_page_limit(request)
         self._set_page_offset(request)
 
@@ -53,6 +53,7 @@ class OffsetPaginationHook(object):
         if self._offset_key not in request.params.keys():
             request.context["pagination"]["offset"] = 0
             return
+
         try:
             request.context["pagination"]["offset"] = int(request.params[self._offset_key])
         except ValueError:
@@ -74,6 +75,7 @@ class OffsetPaginationHook(object):
             )
             request.context["pagination"]["limit"] = self._default_limit
             return
+
         try:
             limit = int(request.params[self._limit_key])
         except ValueError:
@@ -82,10 +84,12 @@ class OffsetPaginationHook(object):
             )
             request.context["pagination"]["limit"] = self._default_limit
             return
+
         if limit > self._max_limit or limit <= 0:
             self._logger.info(
                 f"Pagination limit out of bound, setting it to {self._default_limit}"
             )
             request.context["pagination"]["limit"] = self._default_limit
             return
+
         request.context["pagination"]["limit"] = limit
