@@ -1,6 +1,13 @@
 falcon-pagination-hook
 ======================
 
+.. image:: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+    :target: LICENSE
+.. image:: https://travis-ci.org/Darkheir/falcon-pagination-hook.svg?branch=master
+    :target: https://travis-ci.org/Darkheir/falcon-pagination-hook
+.. image:: https://codecov.io/gh/Darkheir/falcon-pagination-hook/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/Darkheir/falcon-pagination-hook
+
 A small falcon hook to parse pagination elements from the request.
 
 For now it parses an Offset based pagination.
