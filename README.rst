@@ -1,6 +1,10 @@
 falcon-pagination-hook
 ======================
 
+.. image:: https://api.codacy.com/project/badge/Grade/5617fd2a2b724aaea2c0b5f440da7d3f
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/app/Darkheir/falcon-pagination-hook?utm_source=github.com&utm_medium=referral&utm_content=Darkheir/falcon-pagination-hook&utm_campaign=Badge_Grade_Dashboard
+
 .. image:: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
     :target: LICENSE
 .. image:: https://travis-ci.org/Darkheir/falcon-pagination-hook.svg?branch=master
