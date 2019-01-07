@@ -1,7 +1,7 @@
 -r requirements.txt
 
-pytest
-pytest-mock
-pytest-cov
-codecov
-coverage
+pytest==4.1.0
+pytest-cov==2.6.1
+pytest-mock==1.10.0
+codecov==2.0.15
+coverage==4.5.2
