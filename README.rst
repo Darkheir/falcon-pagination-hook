@@ -6,10 +6,13 @@ falcon-pagination-hook
 .. image:: https://travis-ci.org/Darkheir/falcon-pagination-hook.svg?branch=master
     :target: https://travis-ci.org/Darkheir/falcon-pagination-hook
 .. image:: https://codecov.io/gh/Darkheir/falcon-pagination-hook/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/Darkheir/falcon-pagination-hook
+    :target: https://codecov.io/gh/Darkheir/falcon-pagination-hook
 .. image:: https://api.codacy.com/project/badge/Grade/5617fd2a2b724aaea2c0b5f440da7d3f
-   :alt: Codacy Badge
-   :target: https://app.codacy.com/app/Darkheir/falcon-pagination-hook?utm_source=github.com&utm_medium=referral&utm_content=Darkheir/falcon-pagination-hook&utm_campaign=Badge_Grade_Dashboard
+    :alt: Codacy Badge
+    :target: https://app.codacy.com/app/Darkheir/falcon-pagination-hook?utm_source=github.com&utm_medium=referral&utm_content=Darkheir/falcon-pagination-hook&utm_campaign=Badge_Grade_Dashboard
+.. image:: https://pyup.io/repos/github/Darkheir/falcon-pagination-hook/shield.svg
+    :target: https://pyup.io/repos/github/Darkheir/falcon-pagination-hook/
+    :alt: Updates
 
 A small falcon hook to parse pagination elements from the request.
 
