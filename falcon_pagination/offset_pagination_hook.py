@@ -26,7 +26,7 @@ class OffsetPaginationHook(object):
         :param limit_key: Name of the key holding the limit value in the url
         """
         self._logger = logging.getLogger(__name__)
-        self._default_limit = default_limit
+        self.default_limit = default_limit
         self._max_limit = max_limit
         self._offset_key = offset_key
         self._limit_key = limit_key
@@ -71,25 +71,25 @@ class OffsetPaginationHook(object):
         """
         if self._limit_key not in request.params.keys():
             self._logger.info(
-                f"No pagination limit in request, setting it to {self._default_limit}"
+                f"No pagination limit in request, setting it to {self.default_limit}"
             )
-            request.context["pagination"]["limit"] = self._default_limit
+            request.context["pagination"]["limit"] = self.default_limit
             return
 
         try:
             limit = int(request.params[self._limit_key])
         except ValueError:
             self._logger.warning(
-                f"Pagination limit is not an integer, setting it to {self._default_limit}"
+                f"Pagination limit is not an integer, setting it to {self.default_limit}"
             )
-            request.context["pagination"]["limit"] = self._default_limit
+            request.context["pagination"]["limit"] = self.default_limit
             return
 
         if limit > self._max_limit or limit <= 0:
             self._logger.info(
-                f"Pagination limit out of bound, setting it to {self._default_limit}"
+                f"Pagination limit out of bound, setting it to {self.default_limit}"
             )
-            request.context["pagination"]["limit"] = self._default_limit
+            request.context["pagination"]["limit"] = self.default_limit
             return
 
         request.context["pagination"]["limit"] = limit
