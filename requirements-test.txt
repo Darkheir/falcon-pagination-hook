@@ -1,6 +1,7 @@
 -r requirements.txt
 
 pytest
+pytest-mock
 pytest-cov
 codecov
 coverage
