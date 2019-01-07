@@ -57,9 +57,13 @@ class OffsetPaginationHook(object):
             return
 
         try:
-            request.context["pagination"]["offset"] = int(request.params[self._offset_key])
+            request.context["pagination"]["offset"] = int(
+                request.params[self._offset_key]
+            )
         except ValueError:
-            self._logger.warning(f"Pagination offset is not an integer, setting it to 0")
+            self._logger.warning(
+                f"Pagination offset is not an integer, setting it to 0"
+            )
             request.context["pagination"]["offset"] = 0
 
     def _set_page_limit(self, request: Request) -> None:
