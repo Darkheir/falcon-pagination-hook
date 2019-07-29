@@ -4,6 +4,6 @@ pytest==4.3.1
 pytest-cov==2.6.1
 pytest-mock==1.10.2
 codecov==2.0.15
-coverage==4.5.3
+coverage==4.5.4
 flake8==3.7.7
 black==19.3b0
