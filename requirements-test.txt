@@ -1,7 +1,7 @@
 -r requirements.txt
 
 pytest==5.0.1
-pytest-cov==2.7.1
+pytest-cov==2.11.0
 pytest-mock==1.10.4
 codecov==2.0.15
 coverage==4.5.4
